@@ -1,0 +1,152 @@
+int seg_a = 12; // declare the variables
+int seg_b = 11;
+int seg_c = 10;
+int seg_d = 9;
+int seg_e = 8;
+int seg_f = 7;
+int seg_g = 6;
+int button =4;
+int led=3;
+void setup() 
+{
+  pinMode(seg_a,OUTPUT); // configure all pins used to outputs
+  pinMode(seg_b,OUTPUT);
+  pinMode(seg_c,OUTPUT);
+  pinMode(seg_d,OUTPUT);
+  pinMode(seg_e,OUTPUT);
+  pinMode(seg_f,OUTPUT);
+  pinMode(seg_g,OUTPUT);
+  pinMode(button, INPUT_PULLUP);
+  pinMode(led,OUTPUT);
+}
+void loop() 
+{ 
+  digitalWrite(3,HIGH);
+  delay(1000);
+  int buttons =digitalRead(button);
+  while (buttons==HIGH)
+  
+  {
+    for(int i=0; i<10; i++)
+    {
+      print_sev_seg(i);
+      delay(1000);
+    }
+    for(int i=9; i>=0; i--)
+    {
+      print_sev_seg(i);
+      delay(1000);
+    }
+  } 
+
+}
+
+
+void print_sev_seg(int data)
+{
+
+  if (data == 0)
+  {
+      digitalWrite(seg_a,HIGH);  //0
+      digitalWrite(seg_b,HIGH);
+      digitalWrite(seg_c,HIGH);
+      digitalWrite(seg_d,HIGH);
+      digitalWrite(seg_e,HIGH);
+      digitalWrite(seg_f,HIGH);
+      digitalWrite(seg_g,LOW);
+  }
+  else if (data == 1)
+  {
+    digitalWrite(seg_a,LOW);  //1
+    digitalWrite(seg_b,HIGH);
+    digitalWrite(seg_c,HIGH);
+    digitalWrite(seg_d,LOW);
+    digitalWrite(seg_e,LOW);
+    digitalWrite(seg_f,LOW);
+    digitalWrite(seg_g,LOW);
+  }
+  else if (data == 2 )
+  {
+    digitalWrite(seg_a,HIGH);  //2
+    digitalWrite(seg_b,HIGH);
+    digitalWrite(seg_c,LOW);
+    digitalWrite(seg_d,HIGH);
+    digitalWrite(seg_e,HIGH);
+    digitalWrite(seg_f,LOW);
+    digitalWrite(seg_g,HIGH);
+  }
+  else if (data == 3 )
+  {
+    digitalWrite(seg_a,HIGH);  //3
+    digitalWrite(seg_b,HIGH);
+    digitalWrite(seg_c,HIGH);
+    digitalWrite(seg_d,HIGH);
+    digitalWrite(seg_e,LOW);
+    digitalWrite(seg_f,LOW);
+    digitalWrite(seg_g,HIGH);
+  }
+  else if (data == 4 )
+  {
+    digitalWrite(seg_a,LOW);  //4
+    digitalWrite(seg_b,HIGH);
+    digitalWrite(seg_c,HIGH);
+    digitalWrite(seg_d,LOW);
+    digitalWrite(seg_e,LOW);
+    digitalWrite(seg_f,HIGH);
+    digitalWrite(seg_g,HIGH);
+  }
+  else if (data == 5 )
+  {
+    digitalWrite(seg_a,HIGH);  //5
+    digitalWrite(seg_b,LOW);
+    digitalWrite(seg_c,HIGH);
+    digitalWrite(seg_d,HIGH);
+    digitalWrite(seg_e,LOW);
+    digitalWrite(seg_f,HIGH);
+    digitalWrite(seg_g,HIGH);
+  }
+  else if (data == 6)
+  {
+    digitalWrite(seg_a,HIGH);  //6
+  digitalWrite(seg_b,LOW);
+  digitalWrite(seg_c,HIGH);
+  digitalWrite(seg_d,HIGH);
+  digitalWrite(seg_e,HIGH);
+  digitalWrite(seg_f,HIGH);
+  digitalWrite(seg_g,HIGH);
+  }
+  else if (data == 7)
+  {
+    digitalWrite(seg_a,HIGH);  //7
+  digitalWrite(seg_b,HIGH);
+  digitalWrite(seg_c,HIGH);
+  digitalWrite(seg_d,LOW);
+  digitalWrite(seg_e,LOW);
+  digitalWrite(seg_f,LOW);
+  digitalWrite(seg_g,LOW);
+  }
+  else if (data == 8)
+  {
+    digitalWrite(seg_a,HIGH);  //8
+  digitalWrite(seg_b,HIGH);
+  digitalWrite(seg_c,HIGH);
+  digitalWrite(seg_d,HIGH);
+  digitalWrite(seg_e,HIGH);
+  digitalWrite(seg_f,HIGH);
+  digitalWrite(seg_g,HIGH);
+  }
+  else if (data == 9)
+  {
+  digitalWrite(seg_a,HIGH);  //9
+  digitalWrite(seg_b,HIGH);
+  digitalWrite(seg_c,HIGH);
+  digitalWrite(seg_d,HIGH);
+  digitalWrite(seg_e,LOW);
+  digitalWrite(seg_f,HIGH);
+  digitalWrite(seg_g,HIGH);
+  }
+  
+
+
+
+}
